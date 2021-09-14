@@ -15,7 +15,7 @@
        android:layout_marginStart="8dp"
        android:layout_marginTop="200dp"
        android:layout_marginEnd="8dp"
-       android:text="From 2021-09-10 to 2021-09-20"
+       android:text="Select dates"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />

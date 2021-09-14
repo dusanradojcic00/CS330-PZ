@@ -1,11 +1,14 @@
 package com.metropolitan.it355;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.util.Pair;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +20,9 @@ import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.metropolitan.it355.databinding.FragmentSearchBinding;
+import com.metropolitan.it355.util.AppConstants;
+
+import org.json.JSONObject;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -39,6 +45,9 @@ public class SearchFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private LocalDate start;
+    private LocalDate end;
 
     private FragmentSearchBinding binding;
 
@@ -108,13 +117,26 @@ public class SearchFragment extends Fragment {
                 LocalDate endDate = Instant.ofEpochMilli(selectedDates.second)
                         .atZone(ZoneId.systemDefault()).toLocalDate();
                 String text = "From: " + startDate.toString() + " to: " + endDate.toString();
+
                 binding.dateButton.setText(text);
                 Log.d(TAG, "Start " + startDate.toString());
                 Log.d(TAG, "End " + endDate.toString());
-            }
 
+                this.start = startDate;
+                this.end = endDate;
+            }
         });
 
+        binding.searchButton.setOnClickListener(v -> {
+            if (start != null && end != null) {
+                Intent i = new Intent(getContext(), CarListActivity.class);
+                i.putExtra("startDate", start.toString());
+                i.putExtra("endDate", end.toString());
+                startActivity(i);
+            } else {
+                Toast.makeText(getContext(), "You haven't selected dates", Toast.LENGTH_SHORT).show();
+            }
+        });
         super.onViewCreated(view, savedInstanceState);
     }
 

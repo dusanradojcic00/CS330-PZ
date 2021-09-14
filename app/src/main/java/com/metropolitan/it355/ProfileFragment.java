@@ -1,12 +1,15 @@
 package com.metropolitan.it355;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,6 +69,13 @@ public class ProfileFragment extends Fragment {
         binding.editProfileButton.setOnClickListener(v -> {
             Intent i = new Intent(getContext(), EditProfileActivity.class);
             startActivity(i);
+        });
+        binding.logoutButton.setOnClickListener(v -> {
+            SharedPreferences sp = getActivity().getSharedPreferences("userPrefs", Context.MODE_PRIVATE);
+            sp.edit().clear().commit();
+            Intent i = new Intent(getContext(), LoginActivity.class);
+            startActivity(i);
+            getActivity().finish();
         });
         super.onViewCreated(view, savedInstanceState);
     }

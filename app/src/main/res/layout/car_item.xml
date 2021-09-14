@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/carImageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/carMakerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/carImageView"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/carImageView"
+        android:text="BWM" />
+
+    <TextView
+        android:id="@+id/carModelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/carMakerText"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/carMakerText"
+        android:text="520d" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/carMakerText"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/carImageView"
+        android:text="Seats: " />
+
+    <TextView
+        android:id="@+id/carSeatsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignParentEnd="false"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/textView4"
+        android:text="5" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/carSeatsText"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/carSeatsText"
+        android:text="Transmission: " />
+
+    <TextView
+        android:id="@+id/carTransText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/textView6"
+        android:text="Auto" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/carImageView"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/carImageView"
+        android:text="Price:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/carPriceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/textView8"
+        android:text="$20"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/reserveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/carImageView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="0dp"
+        android:text="Reserve" />
+
+</RelativeLayout>

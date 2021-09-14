@@ -17,6 +17,12 @@
         android:theme="@style/Theme.IT355"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".CarListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="true" />
         <activity
@@ -35,7 +41,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

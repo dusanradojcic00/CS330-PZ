@@ -60,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = sp.edit();
                             try {
                                 editor.putString("Bearer", "Bearer " + response.getString("bearer"));
-
                                 JSONObject user = response.getJSONObject("user");
                                 editor.putLong("userId", user.getLong("id"));
 
@@ -82,6 +81,11 @@ public class LoginActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+        });
+
+        binding.registerButton.setOnClickListener(v -> {
+            Intent i = new Intent(this, RegisterActivity.class);
+            startActivity(i);
         });
     }
 }
